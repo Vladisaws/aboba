@@ -8,7 +8,7 @@ type Engine struct {
 }
 
 func (e *Engine) work() {
-	if e.fuel != 0 && e.battery != 0 {
+	if e.fuel <= 0 && e.battery <= 0 {
 		return
 	}
 	e.fuel -= 1
@@ -53,7 +53,6 @@ func main() {
 	fmt.Println("Enter speed: 20, 40, 80, 120")
 	fmt.Scan(&speed)
 	fmt.Println(car.drive(speed))
-	fmt.Println(f, b)
-	fmt.Println(car.engine)
+	fmt.Println(car)
 
 }
